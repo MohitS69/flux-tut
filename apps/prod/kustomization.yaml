@@ -1,0 +1,27 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+
+resources:
+  - ../base
+
+patches:
+  - path: hasher-patch.yaml
+    target:
+      kind: Deployment 
+      name: hasher
+  - path: redis-patch.yaml
+    target:
+      kind: Deployment 
+      name: redis
+  - path: rng-patch.yaml 
+    target:
+      kind: Deployment 
+      name: rng
+  - path: webui-patch.yaml
+    target:
+      kind: Deployment 
+      name: webui
+  - path: worker-patch.yaml
+    target:
+      kind: Deployment 
+      name: worker
