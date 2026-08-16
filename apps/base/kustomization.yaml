@@ -1,9 +1,9 @@
-apiVersion: kustomize.toolkit.fluxcd.io/v1
+apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
   - hasher.yaml
   - redis.yaml
-  - rng.yaml 
+  - rng.yaml
   - webui.yaml
   - worker.yaml

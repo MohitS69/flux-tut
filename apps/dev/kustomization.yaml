@@ -1,4 +1,4 @@
-apiVersion: kustomize.toolkit.fluxcd.io/v1
+apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
@@ -7,21 +7,21 @@ resources:
 patches:
   - path: hasher-patch.yaml
     target:
-      kind: Deployment 
+      kind: Deployment
       name: hasher
   - path: redis-patch.yaml
     target:
-      kind: Deployment 
+      kind: Deployment
       name: redis
-  - path: rng-patch.yaml 
+  - path: rng-patch.yaml
     target:
-      kind: Deployment 
+      kind: Deployment
       name: rng
   - path: webui-patch.yaml
     target:
-      kind: Deployment 
+      kind: Deployment
       name: webui
   - path: worker-patch.yaml
     target:
-      kind: Deployment 
+      kind: Deployment
       name: worker
