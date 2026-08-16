@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - ../base
+  - webui-service.yaml
 
 patches:
   - path: hasher-patch.yaml
