@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: webui
+  namespace: prod
+spec:
+  ingressClassName: haproxy
+  rules:
+    - host: webui.prod.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: webui
+                port:
+                  number: 80
